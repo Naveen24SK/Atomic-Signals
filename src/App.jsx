@@ -1,15 +1,20 @@
-import { useState } from 'react'
+import { useState } from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import Signup from './Pages/SignUp/SignUp';
-import './App.css'
+import Routing from "./Router/Router";
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
-      <div>
-        <Signup />
-      </div>
+    <div>
+      <BrowserRouter>
+        <Routing />
+      </BrowserRouter>
+      {/* <Signup /> */}
+    </div>
   );
-};
+}
 
 export default App;

@@ -1,12 +1,12 @@
 import React from "react";
 import CustomButton from "../../Components/Button/Button";
 import CustomTextField from "../../Components/Input/Input";
-import { Box, Typography, Link, InputLabel } from "@mui/material";
+import { Box, InputLabel, Typography } from "@mui/material";
 import Logo from "../../assets/atomiclogo.svg";
 import Background from "../../Components/Background/Background";
-import { display, flexbox, padding, textAlign, width } from "@mui/system";
+import { display, textAlign, width } from "@mui/system";
 
-const Login = () => {
+const Reset = () => {
     return (
         <Background>
             <Box sx={loginBox}>
@@ -15,33 +15,32 @@ const Login = () => {
                 </Box>
                 <Box sx={textBox}>
                     <Typography variant="h5" fontWeight="bold" mb={1}>
-                        Welcome!
+                        Reset Password
                     </Typography>
                     <Typography variant="body2" sx={contentBox} mb={2}>
-                    One positive feedback per day or week can make us grow exponentially                    </Typography>
+                        Please provide a new password for your account
+                    </Typography>
                 </Box>
+                
                 <Box sx={textField}>
-                <InputLabel required>Email</InputLabel>
-                <CustomTextField 
-                    required 
-                />
-                </Box>
-                <Box sx={textField}>
-                <InputLabel required>Password</InputLabel>
+                <InputLabel required>New Password</InputLabel>
                 <CustomTextField 
                     type="password" 
                     isPassword={true} 
                     required 
                 />
                 </Box>
-            <Box sx={linkBox}>
-            <Typography variant="body2">
-              <Link href="/login" underline="always" color="textPrimary">
-                Forgot Password?
-              </Link>
-            </Typography>
-          </Box>
-                <CustomButton text="Log in" variant="contained" />
+
+                <Box sx={textField}>
+                <InputLabel required>Confirm new password</InputLabel>
+                <CustomTextField 
+                    type="password" 
+                    isPassword={true} 
+                    required 
+                />
+                </Box>
+
+                <CustomButton text="Reset password" variant="contained" />
             </Box>
         </Background>
     );
@@ -68,29 +67,27 @@ const logoBox = {
 };
 
 const textBox = {
-    textAlign: 'left',
+    textAlign: 'center',
     mt: 2,
     mb: 3,
+    display:'flex',
+    flexDirection:'column',
+    justifyContent:'flex-start',
+    alignItems:'flex-start',
+    width:'100%'
 };
 
 const contentBox = {
     color: '#71707E',
     fontSize: '14px',
     width: '100%',
+    textAlign:'justify'
 };
 
-const textField ={
-    display:'flex',
-    flexDirection:'column',
+const textField = {
+    marginBottom: 2,
     width:'100%',
 };
 
-const linkBox = {
-    display: 'flex',
-    justifyContent:'flex-end',
-    padding: 1,
-    width:'100%',
-}
 
-
-export default Login;
+export default Reset;

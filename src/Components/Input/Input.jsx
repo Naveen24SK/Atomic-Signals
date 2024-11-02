@@ -1,6 +1,6 @@
 import React from 'react';
 import { TextField, IconButton, InputAdornment } from '@mui/material';
-import { height, styled } from '@mui/system';
+import { styled } from '@mui/system';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 
 const StyledTextField = styled(TextField)(({ theme }) => ({
@@ -8,14 +8,14 @@ const StyledTextField = styled(TextField)(({ theme }) => ({
   width: '100%',
   '& .MuiOutlinedInput-root': {
     borderRadius: '4px',
-    height:'40px'
+    height: '40px',
   },
   '& .MuiInputLabel-asterisk': {
     color: 'red',
   },
 }));
 
-const CustomTextField = ({ label, type, isPassword, ...props }) => {
+const CustomTextField = ({ label, type = 'text', isPassword = false, ...props }) => {
   const [showPassword, setShowPassword] = React.useState(false);
 
   const togglePasswordVisibility = () => {
@@ -27,7 +27,7 @@ const CustomTextField = ({ label, type, isPassword, ...props }) => {
       {...props}
       label={label}
       type={isPassword && !showPassword ? 'password' : type}
-      required 
+      InputLabelProps={{ required: props.required }}
       InputProps={
         isPassword
           ? {

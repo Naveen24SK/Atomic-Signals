@@ -1,14 +1,12 @@
 import React from "react";
-import {Box} from '@mui/material';
+import { Box } from '@mui/material';
 import BackImg from '../../assets/bg.svg';
 
-
-const Background =()=> {
+const Background = ({ children }) => {
     return (
         <Box sx={{
             backgroundColor: '#EFEEFB',
             height: '100vh',
-            width: '100%',
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
@@ -17,12 +15,7 @@ const Background =()=> {
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat'
         }}>
-            <Box sx={{  
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center'
-                }}>
-            </Box>
+            {children}
         </Box>
     );
 };

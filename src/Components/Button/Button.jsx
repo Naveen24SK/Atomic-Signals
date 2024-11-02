@@ -30,6 +30,13 @@ const StyledButton = styled(Button)(({ theme }) => ({
     border: '1px solid #e0e0e0',
   },
 
+  '&.import':{
+    backgroundColor: '#F0F0F0',
+    color:'#49C792',
+    fontSize:'14px',
+    border: '1.5px solid #49C792'
+  },
+
   '&:hover': {
     boxShadow: '0 2px 10px rgba(0,0,0,0.1)',
   },
