@@ -5,7 +5,7 @@ import {
 } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 import FilterListIcon from "@mui/icons-material/FilterList";
-import { border, borderBottom, borderRadius, styled } from "@mui/system";
+import { border, borderBottom, borderRadius, color, fontSize, styled } from "@mui/system";
 import ReactSpeedometer from "react-d3-speedometer";
 import CustomSwitch from "../Switch/Switch";
 import CustomButton from "../Button/Button"; 
@@ -22,7 +22,7 @@ const TableContainerStyled = styled(TableContainer)({
   "& .MuiTableCell-root": {
     whiteSpace: "nowrap",
     textAlign: "justify",
-    padding: "8px 12px",
+    padding: "0px 20px",
   },
   "& .sticky-col": {
     position: "sticky",
@@ -37,6 +37,7 @@ const TableContainerStyled = styled(TableContainer)({
   },
   "& .MuiTableCell-body": {
     textAlign: "center",
+    borderBottom:"none"
   },
 });
 
@@ -139,7 +140,7 @@ const TableComponent = () => {
   };
 
   return (
-    <Box sx={{ display: "flex", alignItems: "center", flexDirection: "column", padding: 4, backgroundColor: '#F0F0F0', height:'96vh', width:'90%' }}>
+    <Box sx={{ display: "flex", alignItems: "center", flexDirection: "column", padding: 4, backgroundColor: '#F0F0F0', height:'91vh', width:'90%' }}>
       <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{ width: '100%', mb: 2 }}>
         <Typography variant="h6">Team members</Typography>
         <Stack direction="row" spacing={2} alignItems="center">
@@ -157,7 +158,7 @@ const TableComponent = () => {
       <Box sx={tableBox}>
         <TableContainerStyled sx={tablesec} component={Paper}>
           <Table stickyHeader>
-            <TableHead>
+            <TableHead sx={tablehead}>
               <TableRow>
                 <TableCell>Name</TableCell>
                 <TableCell>Designation</TableCell>
@@ -234,7 +235,7 @@ const TableComponent = () => {
             </TableBody>
           </Table>
         </TableContainerStyled>
-        <TableContainerStyled>
+        <TableContainerStyled sx={pagesec}>
           <TablePagination
             rowsPerPageOptions={[5, 10, 15]}
             component="div"
@@ -289,16 +290,29 @@ const tableBox = {
   backgroundColor: "#FFFFFF",
 };
 
+const tablehead = {
+  height: "8vh",
+  fontSize: "18px",
+  color: "#353448"
+};
+
 const tablesec = {
   height: "calc(100vh - 160px)",
+  scrollbarWidth: "none"
 };
 
 const pagerow = {
   "& .MuiTablePagination-root": {
-    backgroundColor: "white",
+    backgroundColor: "#fff",
     borderRadius: "8px",
     border: "1px solid #EBEBEB",
   }
+};
+
+const pagesec = {
+  backgroundColor: "#FFFFFF",
+  borderRadius: "8px",
+  border: "1px solid #EBEBEB",
 }
 
 
