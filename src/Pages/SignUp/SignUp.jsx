@@ -7,8 +7,17 @@ import BackImg from '../../assets/bg.svg';
 import CustomButton from '../../Components/Button/Button'; 
 import CustomTextField from '../../Components/Input/Input'; 
 import './SignUp.jsx';
+import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
+  const navigate = useNavigate();
+
+  // Define handleSignup as a function
+  const handleSignup = () => {
+    navigate("/team");
+  };
+
+
   return (
     <Box sx={mainBox}>
       <Box sx={centeredBox}>
@@ -45,10 +54,11 @@ const Signup = () => {
         
           <Box sx={emailBox}>
             <Typography>Work Email<span style={{ color: 'red' }}> *</span></Typography>
-          <CustomTextField  type="email" required />
+            <CustomTextField type="email" required />
           </Box>
 
-          <CustomButton text="Sign up" variant="contained" />
+          {/* Add onClick to call handleSignup */}
+          <CustomButton text="Sign up" variant="contained" onClick={handleSignup} />
 
           <Box sx={footerBox}>
             <Typography variant="body2">
@@ -64,7 +74,7 @@ const Signup = () => {
   );
 };
 
-
+// Styles for each Box component
 const mainBox = {
   backgroundColor: '#EFEEFB',
   height: '100vh',

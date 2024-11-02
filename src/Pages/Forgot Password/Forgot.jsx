@@ -5,8 +5,18 @@ import Background from '../../Components/Background/Background';
 import CustomButton from '../../Components/Button/Button'; 
 import CustomTextField from '../../Components/Input/Input'; 
 import { textAlign } from '@mui/system';
+import { useNavigate } from "react-router-dom";
+
 
 const Forgot = () => {
+  const navigate = useNavigate();
+
+  // Define handleSignup as a function
+  const handleGetlink = () => {
+    navigate("/reset");
+  };
+
+
   return (
     <Background>
       <Box sx={forgotBox}>
@@ -35,6 +45,7 @@ const Forgot = () => {
         <CustomButton 
           text="Get Link" 
           sx={buttonBox}
+          onClick={handleGetlink}
         />
 
         <Typography variant="body2" sx={linkBox}>

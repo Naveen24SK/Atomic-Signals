@@ -36,7 +36,7 @@ const Login = () => {
                 </Box>
             <Box sx={linkBox}>
             <Typography variant="body2">
-              <Link href="/login" underline="always" color="textPrimary">
+              <Link href="/forgot" underline="always" color="textPrimary">
                 Forgot Password?
               </Link>
             </Typography>
